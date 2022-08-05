@@ -4,6 +4,7 @@
   "description": "Gaming platform powered by Twilio SMS.",
   "main": "lib/app.js",
   "scripts": {
+    "dev": "nodemon lib/app.js",
     "start": "node lib/app.js"
   },
   "engines": {
