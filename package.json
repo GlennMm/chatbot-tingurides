@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "html-entities": "^2.3.2",
     "moji-translate": "^1.0.8",
+    "mongoose": "^6.5.2",
     "nanoid": "^3.1.23",
     "random-words": "^1.1.1",
     "superb": "^4.0.0",
