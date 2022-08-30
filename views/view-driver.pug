@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TinguRides - Drivers
+        script(src="https://cdn.tailwindcss.com")
+    body.h-screen.w-screen
+        .block.p-6.rounded-lg.shadow-lg.bg-white.w-full.h-full
+            p.text-2xl.font-semibold.uppercase.text-center.py-4 Drivers Details
+            case found
+                when False 
+                    p.w-96.my-4.py-2.px-4.font-semibold.rounded-md.shadow-md.bg-red-700.text-white Error message
+                default
+                    .p-4.flex.justify-center.items-center
+                        div.flex.justify-center.flex-col.w-96
+                            .flex.justify-between 
+                                p Fullname
+                                h2= driver.fullname
+                            .flex.justify-between 
+                                p National ID
+                                h2= driver.nat_id
+                            .flex.justify-between 
+                                p Date Of Birth
+                                h2= driver.dob
+                            .flex.justify-between 
+                                p Occupation
+                                h2= driver.occupation
+                            .flex.justify-between 
+                                p Phone Number
+                                h2= driver.phone_number
+                            .flex.justify-between.mt-6 
+                                a(href=`/drivers`) 
+                                        button.rounded-l.inline-block.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800') Back
+                                a(href=`/driver/delete/${driver._id}`) 
+                                        button.rounded-l.inline-block.px-6.bg-red-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0 active:bg-red-800') Delete
+
+
