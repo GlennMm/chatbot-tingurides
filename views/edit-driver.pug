@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TinguRides 
+        script(src="https://cdn.tailwindcss.com")
+    body
+        .flex.h-screen.w-screen.justify-center.items-center
+            .block.p-6.rounded-lg.shadow-lg.bg-white.max-w-md
+                p.text-2xl.font-semibold.uppercase.text-center.py-4 Editing A Driver
+                case err 
+                    when true 
+                        p.w-96.my-4.py-2.px-4.font-semibold.rounded-md.shadow-md.bg-red-700.text-white= message
+                    default 
+                        div
+                form.grid.grid-cols-2.gap-4.form-group.mb-6(id="form" method="POST" action=`/driver/edit/${driver._id}`)
+                    input#exampleInput123.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="fullname", type='text', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', aria-describedby='emailHelp123', placeholder='Fullname', value=driver.fullname).form-group.mb-6
+                    input#exampleInput124.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="nat_id", type='text', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', aria-describedby='emailHelp124', placeholder='National ID', value=driver.nat_id).form-group.mb-6
+                    input#exampleInput125.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="dob", type='date', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder='D.O.B', value=driver.dob).form-group.mb-6
+                    input#exampleInput124.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="phone_number", type='text', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', aria-describedby='emailHelp124', placeholder='Phone Number', value=driver.phone_number).form-group.mb-6
+                    input#exampleInput124.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="occupation", type='text', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', aria-describedby='emailHelp124', placeholder='Occupation', value=driver.occupation).form-group.mb-6
+                    input#exampleInput126.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="password", type='password', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder='Password', value=driver.password).form-group.form-check.text-center.mb-6
+                    input#exampleInput126.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(name="confirm_pass", type='password', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none', placeholder='Confirm Password', value=driver.password).form-group.form-check.text-center.mb-6
+                    input#exampleInput126.form-control.block.w-full.px-3.text-base.font-normal.text-gray-700.bg-white.bg-clip-padding.border.border-solid.border-gray-300.rounded.transition.ease-in-out.m-0(hidden=true, name="type", value="driver", type='text', class='py-1.5 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none').form-group.form-check.text-center.mb-6
+                    a.w-full.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.rounded.shadow-md.transition.duration-150.ease-in-out(class='py-2.5 hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg text-center', href="/") Back
+                    button.w-full.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.rounded.shadow-md.transition.duration-150.ease-in-out(type='submit', class='py-2.5 hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg') Save Changes

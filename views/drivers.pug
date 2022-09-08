@@ -9,11 +9,17 @@ html(lang="en")
     body.h-screen.w-screen
         .block.p-6.rounded-lg.shadow-lg.bg-white.w-full.h-full
             p.text-2xl.font-semibold.uppercase.text-center.py-4 Drivers List
+            
             case err 
                 when true 
                     p.w-96.my-4.py-2.px-4.font-semibold.rounded-md.shadow-md.bg-red-700.text-white= message
                 default 
                     div.flex.justify-center
+            
+            .flex.gap-4.space-between
+                a.inline-block.px-12.py-3.text-sm.font-medium.text-indigo-600.border.border-indigo-600.rounded(class='hover:bg-indigo-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring', href='/') Back
+                a.inline-block.px-12.py-3.text-sm.font-medium.text-indigo-600.border.border-indigo-600.rounded(class='hover:bg-indigo-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring', href='/new-driver') Add New Driver
+            
             ul.bg-white.rounded-lg.text-gray-900(class="w-3/4")
                 each driver in drivers
                     li.px-6.py-2.border-b.border-gray-200.w-full.flex.justify-between
@@ -22,7 +28,7 @@ html(lang="en")
                             .inline-flex.shadow-md(class='hover:shadow-lg focus:shadow-lg', role='group')
                                 a(href=`/driver/detail/${driver._id}`) 
                                     button.rounded-l.inline-block.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800') View
-                                button.inline-block.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800') Edit
+                                a.inline-block.px-6.bg-blue-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800', href=`/driver/edit/${driver._id}`) Edit
                                 a(href=`/driver/delete/${driver._id}`) 
                                     button.rounded-l.inline-block.px-6.bg-red-600.text-white.font-medium.text-xs.leading-tight.uppercase.transition.duration-150.ease-in-out(type='button', class='py-2.5 hover:bg-red-700 focus:bg-red-700 focus:outline-none focus:ring-0 active:bg-red-800') Delete
 
